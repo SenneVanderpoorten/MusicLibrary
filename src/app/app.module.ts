@@ -9,8 +9,11 @@ import { AppComponent } from './app.component';
 import { CreateComponent } from './components/create/create.component';
 import { IndexComponent } from './components/index/index.component';
 import { EditComponent } from './components/edit/edit.component';
+import { PlaylistComponent } from './components/playlist/playlist.component';
 
 import { TrackService } from './track.service';
+import { PlayListService } from './PlayList.service';
+
 
 const routes: Routes = [
   {
@@ -24,6 +27,10 @@ const routes: Routes = [
   {
     path: 'index',
     component: IndexComponent
+  },
+  {
+    path: 'playlist',
+    component: PlaylistComponent
   }
 ];
 
@@ -33,6 +40,7 @@ const routes: Routes = [
     CreateComponent,
     IndexComponent,
     EditComponent,
+    PlaylistComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +49,7 @@ const routes: Routes = [
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [ TrackService ],
+  providers: [ TrackService , PlayListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

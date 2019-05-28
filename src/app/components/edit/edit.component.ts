@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
-import { Track } from '../index/Track';
+import { Track } from '../../Track';
 import { TrackService } from '../../track.service';
 
 @Component({

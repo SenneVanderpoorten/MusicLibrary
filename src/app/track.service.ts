@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Track } from './components/index/Track';
+import { Track } from './Track';
 
 @Injectable({
   providedIn: 'root'
@@ -19,12 +19,17 @@ export class TrackService {
     this.http.post(`${this.uri}/add`, obj)
         .subscribe(res => console.log('Done'));
   }
+  
+  getTrack(id){
+    return this.http.get(`${this.uri}/${id}`);
+  }
 
   getTracks() {
     return this
            .http
            .get(`${this.uri}`);
 }
+  
 
 editTrack(id) {
   return this
