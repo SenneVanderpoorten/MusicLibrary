@@ -65,5 +65,22 @@ trackRoutes.route('/delete/:id').get(function (req, res) {
         else res.json('Successfully removed');
     });
 });
+trackRoutes.route('/AddPlaylist/:id').post(function (req, res) {
+  Track.findById(req.params.id, function(err, track) {
+  if (!track)
+    return next(new Error('Could not load Document'));
+  else {
+      track.track_name = req.body.track_name;
+      track.artist_name = req.body.artist_name;
+
+      track.save().then(track => {
+        res.json('Update complete');
+    })
+    .catch(err => {
+          res.status(400).send("unable to update the database");
+    });
+  }
+});
+});
 
 module.exports = trackRoutes;

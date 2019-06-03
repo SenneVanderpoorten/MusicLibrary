@@ -6,6 +6,7 @@ import { NavigationCancel,
   NavigationError,
   NavigationStart,
   Router } from '@angular/router';
+  import 'hammerjs';
 
 @Component({
   selector: 'app-root',

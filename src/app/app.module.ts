@@ -14,6 +14,9 @@ import { PlaylistComponent } from './components/playlist/playlist.component';
 import { TrackService } from './track.service';
 import { PlayListService } from './PlayList.service';
 
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+
 
 const routes: Routes = [
   {
@@ -47,7 +50,10 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     SlimLoadingBarModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatButtonModule, MatCheckboxModule
+    
   ],
   providers: [ TrackService , PlayListService],
   bootstrap: [AppComponent]

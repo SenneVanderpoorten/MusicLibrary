@@ -1,20 +1,22 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Track } from './Track';
+import { TrackService } from './track.service';
 
 @Injectable({
     providedIn: 'root'
   })
   export class PlayListService {
 
-    uri = 'http://localhost:4000/playlist';
+    uri = 'http://localhost:4000/songsList';
 
-    constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient, public trackService: TrackService) { }
   
-    addTrack(Track) {
+    addTrack(track: Track) {
+      //todo
       
-      this.http.post(`${this.uri}/add`,Track)
-          .subscribe(res => console.log('Done'));
+      
+         
     }
     getTracks() {
       return this

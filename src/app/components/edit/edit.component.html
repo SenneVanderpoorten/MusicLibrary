@@ -2,21 +2,21 @@
   <div class="card-body">
     <form [formGroup]="angForm" novalidate>
       <div class="form-group">
-        <label class="col-md-4">Unit Name</label>
+        <label class="col-md-4">Track Name</label>
         <input type="text" class="form-control" name="track_name" formControlName="track_name" #track_name [(ngModel)] = "track.track_name"/>
       </div>
       <div *ngIf="angForm.controls['track_name'].invalid && (angForm.controls['track_name'].dirty || angForm.controls['track_name'].touched)" class="alert alert-danger">
         <div *ngIf="angForm.controls['track_name'].errors.required">
-          Unit Name is required.
+          track name is required
         </div>
       </div>
       <div class="form-group">
-        <label class="col-md-4">Unit Price</label>
+        <label class="col-md-4">Artist Name</label>
         <input type="text" class="form-control" name="artist_name" formControlName="artist_name" #artist_name [(ngModel)] = "track.artist_name"/>
       </div>
       <div *ngIf="angForm.controls['artist_name'].invalid && (angForm.controls['artist_name'].dirty || angForm.controls['artist_name'].touched)" class="alert alert-danger">
         <div *ngIf="angForm.controls['artist_name'].errors.required">
-          Unit Price is required.
+          artist name is required.
         </div>
       </div>
       <div class="form-group">

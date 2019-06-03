@@ -13,11 +13,13 @@ const express = require('express'),
       err => { console.log('Can not connect to the database'+ err)}
     );
     const trackRoutes = require('./routes/track.route');
+    const PlayListRoutes = require('./routes/playList.route');
 
     app.use(bodyParser.json());
     app.use(cors());
     const port = process.env.PORT || 4000;
 
+    app.use('/songsList', PlayListRoutes);
     app.use('/tracks', trackRoutes);
 
     const server = app.listen(port, function(){

@@ -22,8 +22,8 @@ export class IndexComponent implements OnInit {
   }
   AddToPlayList(id){
     
-    this.playlistService.addTrack(this.trackservice.getTrack(id));
-  }
+    //this.playlistService.addTrack(this.trackservice.getTrack(id));
+}
 
   ngOnInit() {
     this.trackservice
